@@ -1,0 +1,102 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+@layer base, demo;
+@import url(https://fonts.bunny.net/css?family=abel:400);
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer demo {
+  .cards {
+    display: flex;
+    flex-direction: row; /* 水平排列卡片 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    gap: 20px; /* 卡片之間的間距 */
+  }
+
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* 文字置中 */
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .card h2 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 15px;
+    background: #ffdfba;
+    color: #333;
+  }
+
+  .card p {
+    padding: 15px;
+    font-size: 1em;
+    color: #555;
+  }
+
+  .card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #ff9f9f;
+    color: white;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    transition: background 0.3s ease;
+  }
+
+  .card a:hover {
+    background: #ff6f6f;
+  }
+
+  .card .icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto; /* 圖片置中 */
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    /*color-scheme: light dark;*/
+    --bg-dark: rgb(2, 6, 24);
+    --bg-light: rgb(229, 229, 229);
+    --txt-light: rgb(10, 10, 10);
+    --txt-dark: rgb(245, 245, 245);
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    font-family: Arial, sans-serif;
+    background: #fef6e4;
+    overflow: hidden;
+  }
+}
